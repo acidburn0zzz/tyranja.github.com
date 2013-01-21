@@ -39,3 +39,7 @@ email = Email.new("blog","the blog is not finished yet",{:from => "tyranja@casio
 
 
 puts email
+
+Homework: 
+
+Learn about hashes
