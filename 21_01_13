@@ -1,0 +1,41 @@
+21.01.13
+
+Übungen:
+
+- create a class called email
+- add 3 parameters to the class and the last one is an Hash
+- the parameters have to be available as instance variables
+- call the class on a variable 
+
+#encoding: UTF-8 
+class Email
+
+  attr_accessor :subject, :body, :headers
+
+  def initialize(subject,body,headers)
+    @subject = subject
+    @body = body
+    @headers = headers
+  end
+
+  def from
+    headers[:from]
+  end
+
+  def to
+    headers[:to]
+  end
+
+  def to_s
+    ["Subject: #{subject}.",
+    "Body: #{body}.",
+    "Email Absender: #{from}.", 
+    "Email Emfänger: #{to}."].join("\n")
+  end
+
+end
+
+email = Email.new("blog","the blog is not finished yet",{:from => "tyranja@casiopeia.uberspace.de", :to => "matt@matt.de"})
+
+
+puts email
